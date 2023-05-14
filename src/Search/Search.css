@@ -1,0 +1,16 @@
+.search-container{
+ justify-content: center;
+ display: flex; 
+}
+input{
+    width: 40vw;
+}
+
+@media screen and (max-width: 600px) {
+    input{
+        width: 80vw;
+    }
+}
+
+
+

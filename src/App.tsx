@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import Search from "./Search/Search";
+import CharacterDetails from "./CharacterDetails/CharacterDetails";
+import "./index.css";
 
 function App() {
+
+  const [character, setCharacter] = useState({
+    name: "",
+    birthYear: "",
+    height: "",
+    weight: "",
+    planet: ""
+  })
+
+  
+
   return (
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">SWAPI</Navbar.Brand>
+          <Navbar.Brand href="#home">StarWars Character Search</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -16,9 +30,10 @@ function App() {
         </Container>
       </Navbar>
 
-      <Container className="my-3">
-        <h1>Hello, World!</h1>
-      </Container>
+      <div className="content-container">
+        <CharacterDetails className="character-details-section" value={character}/>
+        <Search callback={setCharacter}/>
+      </div>
 
       <footer className="bg-light py-3">
         <Container>
