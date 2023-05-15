@@ -19,14 +19,14 @@ function CharacterDetails(props: any) {
         {infoLoaded && (
           <div className="selected-character">
             <div className="image-container">
-                <img src="" alt="" />
+                <img src="../../public/images/anakin skywalker.jpg" alt="" />
             </div>
             <div className="info-container">
                 <ul>
                     <li>Name: {props.value.name}</li>
                     <li>BirthYear: {props.value.birthYear}</li>
-                    <li>Height: {props.value.height}</li>
-                    <li>Weight: {props.value.weight}</li>
+                    <li>Height: {props.value.height} cm</li>
+                    <li>Weight: {props.value.weight} kg</li>
                     <li>Home Planet: {props.value.planet}</li>
                 </ul>
             </div>
