@@ -12,7 +12,9 @@ function App() {
     height: "",
     weight: "",
     planet: ""
-  })
+  });
+
+  const[characterLoaded, setCharacterLoaded] = useState(false);
 
   
 
@@ -31,8 +33,8 @@ function App() {
       </Navbar>
 
       <div className="content-container">
-        <CharacterDetails className="character-details-section" value={character}/>
-        <Search callback={setCharacter}/>
+        <CharacterDetails className="character-details-section" value={character} characterLoaded={characterLoaded}/>
+        <Search setCharacter={setCharacter} setCharacterLoaded={setCharacterLoaded}/>
       </div>
 
       <footer className="bg-light py-3">

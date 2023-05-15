@@ -35,13 +35,15 @@ function Search(props: any) {
 
         setQueryParam("");
 
-        props.callback({
+        props.setCharacter({
           name: character.name,
           birthYear: character.birth_year,
           height: character.height,
           weight: character.mass,
           planet: characterPlanet.name,
         });
+
+        props.setCharacterLoaded(true);
         console.log(response);
       }
     } catch (e) {

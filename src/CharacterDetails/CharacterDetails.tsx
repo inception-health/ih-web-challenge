@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 import "./CharacterDetails.css";
 
 function CharacterDetails(props: any) {
-  const [infoLoaded, setInfoLoaded] = useState(true);
   const wookieTranslator = () =>{
     //some code to call wookie endpoint with same info
   }
@@ -11,12 +10,12 @@ function CharacterDetails(props: any) {
   return (
     <>
       <div className="character-container">
-        {!infoLoaded && (
+        {!props.characterLoaded && (
           <div className="unselected-character">
             <h1>Search Your Character Below</h1>
           </div>
         )}
-        {infoLoaded && (
+        {props.characterLoaded && (
           <div className="selected-character">
             <div className="image-container">
                 <img src="../../public/images/anakin skywalker.jpg" alt="" />
